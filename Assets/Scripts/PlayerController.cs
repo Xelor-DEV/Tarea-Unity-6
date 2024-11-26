@@ -11,16 +11,16 @@ public class PlayerController : MonoBehaviour
     public int velocidad;
     private float direccionHorizontal;
     private float direccionVertical;
+    public int lives;
     void Awake()
     {
         _compRigidbody2D = GetComponent<Rigidbody2D>();
         _compSpriteRend = GetComponent<SpriteRenderer>();
-        velocidad = 8;
     }
     void Update()
     {
-        direccionHorizontal = Input.GetAxis("Horizontal");
-        direccionVertical = Input.GetAxis("Vertical");
+        direccionHorizontal = Input.GetAxisRaw("Horizontal");
+        direccionVertical = Input.GetAxisRaw("Vertical");
         if (direccionHorizontal < 0)
         {
             _compSpriteRend.flipX = true;

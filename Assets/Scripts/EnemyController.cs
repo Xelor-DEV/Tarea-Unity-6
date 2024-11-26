@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         _compRigidbody2D = GetComponent<Rigidbody2D>();
-        velocidad = -5;
     }
     void FixedUpdate()
     {
@@ -22,6 +21,7 @@ public class EnemyController : MonoBehaviour
         tag = collision.gameObject.tag; 
         if (tag == "Wall")
         {
+            gameManager.RestLives();
             Destroy(this.gameObject);
         }
     }
