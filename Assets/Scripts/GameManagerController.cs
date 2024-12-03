@@ -58,10 +58,7 @@ public class GameManagerController : MonoBehaviour
 
     public void RestartGame()
     {
-        if (isGameOver)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void TogglePause()
